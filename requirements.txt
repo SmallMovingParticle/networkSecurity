@@ -4,3 +4,6 @@ pandas
 flask
 matplotlib
 scikit-learn
+setuptools
+
+##-e .
