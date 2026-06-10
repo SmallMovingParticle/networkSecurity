@@ -5,5 +5,11 @@ flask
 matplotlib
 scikit-learn
 setuptools
+pymongo
+certifi
+json
+
+
+pymongo[srv]==4.7
 
 ##-e .
