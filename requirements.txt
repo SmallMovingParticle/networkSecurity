@@ -7,8 +7,8 @@ scikit-learn
 setuptools
 pymongo
 certifi
-json
-
+dill
+Pyaml
 
 pymongo[srv]==4.7
 
