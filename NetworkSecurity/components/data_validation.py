@@ -51,8 +51,13 @@ class DataValidation:
             status= True
             report = {}
             for column in base_df.columns:
-                d1=base_df[column]
-                d2= current_df[column]
+                # --- ADD THIS FIX ---
+                # Skip the '_id' column or any non-numeric Object columns
+                if column == "_id" or base_df[column].dtype == 'O':
+                    continue
+                # --------------------
+                d1 = base_df[column].values
+                d2 = current_df[column].values
                 ## k2 compare the distribution of two samples
                 is_same_dist= ks_2samp(d1 , d2)
                 if threshold <= is_same_dist.pvalue:
@@ -70,6 +75,8 @@ class DataValidation:
             dir_path= os.path.dirname(drift_report_file_path)
             os.makedirs(dir_path , exist_ok=True)
             write_yaml_file(file_path=drift_report_file_path , content= report)
+            return status
+
         except Exception as e:
             raise NetworkSecurityException (e,sys)
         

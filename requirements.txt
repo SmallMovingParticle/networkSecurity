@@ -9,6 +9,9 @@ pymongo
 certifi
 dill
 Pyaml
+mlflow
+dagshub
+
 
 pymongo[srv]==4.7
 
