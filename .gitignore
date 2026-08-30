@@ -1,4 +1,10 @@
-venv
+.venv/
+venv/
 .env
-testMONGOFB.py
-logs
+logs/
+__pycache__/
+*.py[cod]
+.vscode/
+mlruns/
+mlflow.db
+prediction_output/
